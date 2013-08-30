@@ -54,7 +54,7 @@ Original author: [Florent Morin](https://github.com/florentmorin)
 Special Thanks
 --------------
 
-Thanks to [Juan de Bravo](https://github.com/juandebravo) for the adhearsion-activerecord plugin
+Thanks to [Juan de Bravo](https://github.com/juandebravo) for the [adhearsion-activerecord](https://github.com/adhearsion/adhearsion-activerecord) plugin
 My plugin was simply adapted from it.
 
 Links
