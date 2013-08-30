@@ -22,6 +22,9 @@ module Adhearsion
             
             logger.info "Mongoid successfully configured"
           end
+          
+          def stop
+          end
 
           private
 
