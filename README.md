@@ -1,8 +1,7 @@
 adhearsion-mongoid
-
 ==================
 
-adhearsion-mongoid is an Adhearsion Plugin providing Mongoid compatibility.
+adhearsion-mongoid is an (Adhearsion|https://github.com/adhearsion/adhearsion) Plugin providing (Mongoid|https://github.com/mongoid/mongoid) compatibility.
 
 Features
 --------

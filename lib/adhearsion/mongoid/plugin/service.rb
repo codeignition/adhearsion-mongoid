@@ -23,6 +23,8 @@ module Adhearsion
             logger.info "Mongoid successfully configured"
           end
           
+          ##
+          # stop service (unused)
           def stop
           end
 
