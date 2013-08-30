@@ -13,8 +13,8 @@ module Adhearsion
             
             ::Mongoid.load!(*params.delete(:config_path), ENV['AHN_ENV'])
             
-            logger.info "Loading Mongoid models"
-            require_models(*params.delete(:models_paths))
+           # logger.info "Loading Mongoid models"
+          #  require_models(*params.delete(:models_paths))
 
             logger.info "Loading Mongoid logger"
             ::Mongoid.logger = logger
