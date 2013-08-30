@@ -23,8 +23,8 @@ Install
 
 Add `adhearsion-mongoid` to your Adhearsion app's Gemfile.
 
-Configuration
--------------
+Plugin configuration (optional)
+-------------------------------
 
 In your Adhearsion app configuration file, add the following values:
 
@@ -34,6 +34,9 @@ Adhearsion.config[:adhearsion_mongoid] do |config|
   config.config_path = "config/mongoid.yml"
 end
 ```
+
+Mongoid configuration
+---------------------
 
 By default, simply use "config/mongoid.yml" configuration file.
 
@@ -57,8 +60,8 @@ My plugin was simply adapted from it.
 Links
 -----
 * [Source](https://github.com/morin-innovation/adhearsion-mongoid)
-* [Documentation](http://rdoc.info/github/adhearsion/adhearsion-mongoid/master/frames)
-* [Bug Tracker](https://github.com/adhearsion/adhearsion-activerecord/issues)
+* [Documentation](http://rdoc.info/github/morin-innovation/adhearsion-mongoid/master/frames)
+* [Bug Tracker](https://github.com/morin-innovation/adhearsion-mongoid/issues)
 
 Note on Patches/Pull Requests
 -----------------------------
