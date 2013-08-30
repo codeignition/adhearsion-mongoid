@@ -50,7 +50,7 @@ Author
 ------
 
 Original author: [Florent Morin](https://github.com/florentmorin)
-
+(adapted from [Juan de Bravo](https://github.com/juandebravo) work)
 Special Thanks
 --------------
 
