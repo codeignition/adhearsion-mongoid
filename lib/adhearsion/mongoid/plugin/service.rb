@@ -7,11 +7,18 @@ module Adhearsion
           ##
           # Load the mongoid preferences, models and initiate logger
           def start
-            logger.info "Loading Mongoid preferences"
-            
             params = config.to_hash.select { |k,v| !v.nil? }
             
-            ::Mongoid.load!(*params.delete(:config_path), ENV['AHN_ENV'])
+            mongoid_config_path = fullpath *params.delete(:config_path)
+            
+            environment = ENV['AHN_ENV']
+            environment ||= ENV['RACK_ENV']
+            environment ||= ENV['RAILS_ENV']
+            environment ||= 'development'
+            
+            logger.info "Loading Mongoid configuration ('#{environment}')"
+            
+            ::Mongoid.load!(mongoid_config_path, environment)
             
             logger.info "Loading Mongoid models"
             require_models(*params.delete(:models_paths))
@@ -34,22 +41,31 @@ module Adhearsion
           # models are '.rb' file in models directory
           def require_models(*paths)
             paths.each do |path|
-              Dir.foreach(path) do |filename|
-                pn = Pathname.new path
-                
-                if pn.relative?
-                  root_path = Adhearsion.config.root
-                  root_path ||= Dir.pwd
-                  full_path = File.join root_path, path, filename                  
-                else
-                  full_path = File.join path, filename
-                end
+              models_path = fullpath path
+              Dir.foreach(models_path) do |filename|
+                final_path = File.join models_path, filename
+                full_path = fullpath final_path
                 
                 if File.file? full_path and File.extname(full_path) == ".rb"
                   require full_path
                 end
               end
             end
+          end
+          
+          ##
+          # Get full path from any path
+          def fullpath(path)
+            pn = Pathname.new path
+            
+            root_path = ''
+            
+            if pn.relative?
+              root_path = Adhearsion.config.root
+              root_path ||= Dir.pwd
+            end
+            
+            File.join root_path, path
           end
 
           ##
