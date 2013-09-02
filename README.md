@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/adhearsion-mongoid.png)](https://rubygems.org/gems/adhearsion-mongoid)
+
 adhearsion-mongoid
 ==================
 
